@@ -35,30 +35,6 @@ blockquote { font-size: clamp(1.2rem,2.2vw,2.2rem); color:#3d424c; margin-bottom
 .split-card ul { list-style:none; display:grid; gap:.6rem; }
 .split-card li { border-bottom:1px solid var(--line); padding-bottom:.5rem; }
 
-.stack-section { min-height: 240vh; position: relative; }
-.stack-intro { margin-bottom: 2rem; }
-.stack-intro h2 { font-size: clamp(2rem,5vw,5rem); }
-.stack-wrap { position: sticky; top: 12vh; height: 78vh; }
-.stack-card {
-  --progress: 0;
-  position: absolute;
-  inset: 0;
-  background: rgba(252,252,252,.92);
-  border: 1px solid var(--line);
-  padding: clamp(1rem,2vw,2rem);
-  display: grid;
-  align-content: start;
-  gap: .8rem;
-  transform: translateY(calc(var(--i) * 42px - var(--progress) * 66px)) scale(calc(1 - var(--i) * 0.03 + var(--progress) * 0.04));
-  opacity: calc(0.3 + var(--progress) * 0.7);
-  filter: blur(calc((1 - var(--progress)) * 1.2px));
-  transition: transform .2s linear, opacity .2s linear, filter .2s linear;
-  box-shadow: 0 20px 60px rgba(0,0,0,.08);
-}
-.stack-card span { font-size: clamp(1.4rem,2vw,2.2rem); color:#515a68; }
-.stack-card h3 { font-size: clamp(1.8rem,3vw,3.2rem); }
-.stack-card p { font-size: clamp(1rem,1.2vw,1.3rem); max-width: 800px; }
-
 .insight h2 { font-size: clamp(2.4rem,6vw,6.2rem); line-height:.95; margin-bottom:1.2rem; }
 .insight__grid { border-top:2px solid var(--text); padding-top:1rem; display:grid; grid-template-columns:.9fr 1.4fr; gap:2rem; }
 .insight p { font-size: clamp(1rem,1.5vw,1.9rem); line-height:1.45; margin-bottom:1rem; }
@@ -75,5 +51,5 @@ blockquote { font-size: clamp(1.2rem,2.2vw,2.2rem); color:#3d424c; margin-bottom
 .reveal.show { opacity:1; transform:translateY(0); }
 @keyframes grayShift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
 @keyframes drift { 0%,100%{transform:translate(0,0)} 25%{transform:translate(-2%,1%)} 50%{transform:translate(1%,-1%)} 75%{transform:translate(2%,1%)} }
-@media (max-width:1000px) { .about,.split-card,.insight__grid{grid-template-columns:1fr;} .split-card__media{min-height:380px;} .stack-wrap{position:relative; top:auto; height:auto; display:grid; gap:1rem;} .stack-card{position:relative; transform:none !important; opacity:1 !important; filter:none !important;} .stack-section{min-height:auto;} }
+@media (max-width:1000px) { .about,.split-card,.insight__grid{grid-template-columns:1fr;} .split-card__media{min-height:380px;} }
 @media (max-width:760px) { .site-header{flex-direction:column; align-items:flex-start; gap:.6rem;} .hero h1{letter-spacing:.03em;} }
